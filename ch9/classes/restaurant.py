@@ -9,10 +9,26 @@ class Restaurant():
         """
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.number_served = 0
     
     def describe_restaurant(self):
-        print(f"Restaurant name: {self.restaurant_name}.")
+        print(f"\nRestaurant name: {self.restaurant_name}.")
         print(f"Cuisine type: {self.cuisine_type}")
     
     def open_restaurant(self):
-        print(f"The {self.restaurant_name} is open.")
+        print(f"\nThe {self.restaurant_name} is open.")
+    
+    def get_number_served(self):
+        print(f"\nThe restaurant served {self.number_served} clients.")
+    
+    def set_number_served(self, number):
+        if number >= 0:
+            self.number_served = number
+        else:
+            print("You can't serve a negative number.")
+    
+    def increment_number_served(self, increment):
+        if increment >= 0:
+            self.number_served += increment
+        else:
+            print("You can't increment a negative number.")
