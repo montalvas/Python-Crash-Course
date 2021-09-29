@@ -1,4 +1,5 @@
 from classes.car import Car
+from classes.battery import Battery
 
 class EletricCar(Car):
     """Modelo de veículo elétrico"""
@@ -8,7 +9,7 @@ class EletricCar(Car):
         Em seguida, inicializa os atributos específicos de um carro elétrico
         """
         super().__init__(make, model, year)
-        self.battery_size = 70
+        self.battery = Battery()
         
     def describe_battery(self):
         """Exibe a capacidade da bateria"""
