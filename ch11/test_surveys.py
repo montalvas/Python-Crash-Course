@@ -29,4 +29,5 @@ class TestAnonymousSurvey(unittest.TestCase):
         for response in responses:
             self.assertIn(response, my_survey.responses)
 
+
 unittest.main()
