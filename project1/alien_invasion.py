@@ -8,15 +8,17 @@ def run_game():
     """Inicializa o jogo e cria um objeto para a tela"""
     pygame.init()
     ai_settings = Settings()
-    screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
+    screen = pygame.display.set_mode((ai_settings.screen_width,
+                                      ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
     
     # Cria uma espaçonave
-    ship = Ship(screen)
+    ship = Ship(screen, ai_settings)
 
     # Inicia o laço principal do jogo
     while True:
-        gf.check_events()
+        gf.check_events(ship)
+        ship.update_position()
         gf.update_screen(ai_settings, screen, ship)       
 
 
